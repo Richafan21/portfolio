@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richard Fan's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Richard Fan</h1>
+            <p class="subtitle">University of Auckland Computer Science Student</p>
+            <nav>
+                <ul>
+                    <li><a href="#about" class="nav-link active" onclick="showSection('about', this)">About Me</a></li>
+                    <li><a href="#projects" class="nav-link" onclick="showSection('projects', this)">Projects</a></li>
+                    <li><a href="#contact" class="nav-link" onclick="showSection('contact', this)">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="section active">
+            <div class="container">
+                <h2>About Me -</h2>
+                <div class="about-content">
+                    <img src="mypic.jpg" alt="Profile Picture">
+                    <p>Hi! My name is Richard, I am 20 years old and currently a penultimate-year computer science student at the <a href="https://www.auckland.ac.nz/" target="_blank" class="university-link">University of Auckland</a>. 
+                    I am passionate about using my knowledge of coding to solve problems and I am always keen taking on any opportunities I can get to learn more.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2>Projects -</h2>
+                <div class="projects">
+                    <div class="project" onclick="return false;">
+                        <img src="KROUELTTEPROJECTPHOTO.png" alt="Project 1">
+                        <p>Karaoke Roulette</p>
+                    </div>
+                    <div class="project" onclick="return false;">
+                        <img src="project2.png" alt="Project 2">
+                        <p>Base 10 converter</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Contact -</h2>
+                <ul class="contact-links">
+                    <li><a href="https://www.linkedin.com/in/richardfan21/" target="_blank">LinkedIn</a></li>
+                    <li><a href="mailto:richardfan21@gmail.com?&body=Hey Richard,">Email</a></li>
+                    <li><a href="https://github.com/Richafan21" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Richard Fan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showSection(sectionId, clickedLink) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+
+            const selectedSection = document.getElementById(sectionId);
+            selectedSection.classList.add('active');
+
+            clickedLink.classList.add('active');
+        }
+    </script>
+</body>
+</html>
